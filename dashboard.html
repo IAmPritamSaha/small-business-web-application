@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard — PS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="dash-page">
+
+  <aside class="sidebar">
+    <div class="sb-logo">PS</div>
+    <nav class="sb-nav">
+      <a href="dashboard.html" class="sb-link active">Dashboard</a>
+      <a href="#" class="sb-link">Messages</a>
+      <a href="#" class="sb-link">Settings</a>
+    </nav>
+    <button class="sb-logout" id="logoutBtn">Logout</button>
+  </aside>
+
+  <main class="dash-main">
+    <header class="dash-header">
+      <div>
+        <div class="dash-greeting" id="greeting">Dashboard</div>
+        <h1 class="dash-username" id="userName">Loading...</h1>
+      </div>
+      <div class="dash-avatar" id="userAvatar">?</div>
+    </header>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i></div>
+        <div class="stat-info">
+          <div class="stat-num" id="totalMessages">0</div>
+          <div class="stat-label">Messages Received</div>
+        </div>
+      </div>
+      <div class="stat-card accent">
+        <div class="stat-icon"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
+        <div class="stat-info">
+          <div class="stat-num" id="totalUsers">0</div>
+          <div class="stat-label">Registered Users</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-lock" aria-hidden="true"></i></div>
+        <div class="stat-info">
+          <div class="stat-num" id="lastLogin">Today</div>
+          <div class="stat-label">Last Login</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></div>
+        <div class="stat-info">
+          <div class="stat-num">Active</div>
+          <div class="stat-label">Account Status</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Quick Actions</div>
+    <div class="quick-actions">
+      <a href="index.html#contact" class="qa-card">
+        <div class="qa-icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></div>
+        <div>Send a Message</div>
+      </a>
+      <a href="admin.html" class="qa-card">
+        <div class="qa-icon"><i class="fa-solid fa-table-list" aria-hidden="true"></i></div>
+        <div>View All Submissions</div>
+      </a>
+      <a href="#" class="qa-card">
+        <div class="qa-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
+        <div>View Analytics</div>
+      </a>
+    </div>
+
+    <div class="section-title section-gap">Recent Messages</div>
+    <div class="table-wrap">
+      <table class="dash-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message Preview</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="recentMessages">
+          <tr>
+            <td colspan="4" class="empty-row">Loading...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
+

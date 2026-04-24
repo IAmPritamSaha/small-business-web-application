@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin — PS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="dash-page">
+
+  <aside class="sidebar">
+    <div class="sb-logo">PS</div>
+    <nav class="sb-nav">
+      <a href="dashboard.html" class="sb-link">Dashboard</a>
+      <a href="admin.html" class="sb-link active">All Submissions</a>
+      <a href="#" class="sb-link">Settings</a>
+    </nav>
+    <button class="sb-logout" id="logoutBtn">Logout</button>
+  </aside>
+
+  <main class="dash-main">
+    <header class="dash-header">
+      <div>
+        <div class="dash-greeting">Admin Panel</div>
+        <h1 class="dash-username">All Contact Submissions</h1>
+      </div>
+      <div class="admin-badge">Admin</div>
+    </header>
+
+    <div class="admin-filters">
+      <input type="text" id="searchInput" placeholder="Search by name or email..." class="search-input"/>
+      <span id="submissionCount" class="count-badge">0 total</span>
+    </div>
+
+    <div class="table-wrap">
+      <table class="dash-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="submissionsTable">
+          <tr>
+            <td colspan="6" class="empty-row">Loading submissions...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="msgModal" class="modal-overlay" style="display:none">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 id="modal-name">Name</h3>
+          <button onclick="closeModal()" class="modal-close" aria-label="Close message details">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="modal-email" id="modal-email"></div>
+        <div class="modal-body" id="modal-message"></div>
+        <div class="modal-date" id="modal-date"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
+
